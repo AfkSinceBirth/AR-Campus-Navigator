@@ -1,10 +1,19 @@
 # ninja log v5
 22	1110	7667846475139716	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	fd86738eb5119a59
 13	1126	7667846475305789	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	66d0e84f8465c989
-8	1150	7667846475561673	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	2181ce41eb15273f
-26	1171	7667846475794890	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	a599eb53d03f96ed
-5	1215	7667846476216339	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	62696e93872a0da6
 32	1241	7667846476457371	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	41ade1141f41c58b
+8	1150	7667846475561673	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	2181ce41eb15273f
+5	1215	7667846476216339	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	62696e93872a0da6
+26	1171	7667846475794890	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	a599eb53d03f96ed
 18	1449	7667846478534107	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f018c1874be124e5
 0	1523	7667846479242087	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	477aa2f8ebc6666
 1523	1662	7667846480702277	C:/Users/ompan/HomeNavigator/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1e38y3e4/obj/arm64-v8a/libgame.so	bc70316f0a6c1f42
+13	1203	7674339276793206	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	fd86738eb5119a59
+23	1205	7674339276839254	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	66d0e84f8465c989
+16	1224	7674339277037448	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	2181ce41eb15273f
+28	1259	7674339277398768	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	a599eb53d03f96ed
+37	1282	7674339277652843	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	41ade1141f41c58b
+20	1293	7674339277770406	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	62696e93872a0da6
+32	1436	7674339279172399	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f018c1874be124e5
+9	1514	7674339279949200	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	477aa2f8ebc6666
+1514	1632	7674339281157167	C:/Users/ompan/HomeNavigator/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1e38y3e4/obj/arm64-v8a/libgame.so	bc70316f0a6c1f42

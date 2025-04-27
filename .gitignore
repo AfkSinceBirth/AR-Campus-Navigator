@@ -1,1 +1,39 @@
-/.vscode
+# Ignore Unity-generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Uu]serSettings/
+
+# Ignore logs, locally generated configs, and metadata
+*.log
+*.pidb
+*.suo
+*.user
+*.userprefs
+*.unityproj
+*.DS_Store
+*.opendb
+*.VC.db
+sysinfo.txt
+
+# Ignore Visual Studio and JetBrains Rider files
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.cache
+
+# Ignore temporary files
+*.tmp
+
+# Ignore Burst Debug Information
+HomeNavigator_BurstDebugInformation_DoNotShip/
+
+# Ignore Package Cache and Unity Package Manager files
+[Ll]ibrary/PackageCache/
+Packages/packages-lock.json
+
+# Ignore Unity-generated asset files
+Assets/AssetStoreTools*

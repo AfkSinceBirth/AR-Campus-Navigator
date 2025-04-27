@@ -1,50 +1,68 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.Android;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PopulatingDestinationView : MonoBehaviour
 {
-    public GameObject locationPrefab; // Assign prefab in Inspector
-    public Transform contentHolder; // Assign Content GameObject
-    public TMP_InputField searchField;
+    public GameObject locationPrefab; // Button prefab for locations
+    public Transform contentHolder; // Parent object for scroll view items
+    public TMP_InputField searchField; // Search bar input field
 
-    private List<string> locations = new List<string> { "Office", "Cafeteria", "Meeting Room", "Exit" };
+    private DatabaseManager databaseManager; // Handles database interactions
+    private List<(string,string)> locations; // Stores retrieved locations
 
     void Start()
     {
-        // Debugging references before running the script
-        Debug.Log("locationPrefab assigned: " + (locationPrefab != null));
-        Debug.Log("contentHolder assigned: " + (contentHolder != null));
-        Debug.Log("searchField assigned: " + (searchField != null));
-
-        if (locationPrefab == null || contentHolder == null || searchField == null)
-        {
-            Debug.LogError("Critical Error: Missing references! Assign them in the Inspector.");
-            return; // Stop execution if references are missing
-        }
-
-        PopulateList(locations);
+        databaseManager = new DatabaseManager(); // 📌 Create Database Manager instance
+        PopulateScrollView();
         searchField.onValueChanged.AddListener(FilterList);
     }
 
-    void PopulateList(List<string> locationData)
+    // 📌 **Fetch Location Data and Create Buttons**
+    void PopulateScrollView()
     {
-        foreach (var location in locationData)
+        locations = databaseManager.GetLocations(); // 📌 Fetch both Location_ID & Location_Name
+
+        foreach ((string,string) location in locations)
         {
             GameObject newItem = Instantiate(locationPrefab, contentHolder);
-            
-            // Ensure the prefab has a TMP_Text component
-            TMP_Text textComponent = newItem.GetComponentInChildren<TMP_Text>();
-            if (textComponent != null)
+            Button button = newItem.GetComponent<Button>();
+            TMP_Text nameText = newItem.transform.Find("name")?.GetComponent<TMP_Text>();
+            TMP_Text distanceText = newItem.transform.Find("distance")?.GetComponent<TMP_Text>();
+
+            if (nameText != null && distanceText != null)
             {
-                textComponent.text = location;
+                (string id, string name) = location;
+
+                nameText.text = name; // 📌 Assign location name
+                distanceText.text = "0m"; // Placeholder distance
+
+                // 📌 **Attach Location_ID directly to the button**
+                LocationButton buttonScript = newItem.AddComponent<LocationButton>();
+                buttonScript.Initialize(id);
+
+                // 📌 **On Click, store selected Location_ID**
+                button.onClick.AddListener(() => OnLocationSelected(id, name));
+
+                Debug.Log($"✅ Added location: {name} (ID: {id})");
             }
             else
             {
-                Debug.LogError("Prefab is missing a TMP_Text component!");
+                Debug.LogError("❌ TMP_Text components not found in prefab! Check object names.");
             }
         }
+    }
+
+    // 📌 **Store Selected Location_ID in `NavigationEndpoints`**
+    void OnLocationSelected(string destinationId, string destinationName)
+    {
+        NavigationEndpoints.DestinationLocationId = destinationId;
+        NavigationEndpoints.DestinationLocationName = destinationName;
+        Debug.Log($"✅ Destination Selected: {NavigationEndpoints.DestinationLocationId}");
+        SceneManager.LoadScene("NavigationScreen");
     }
 
     void FilterList(string query)
@@ -59,4 +77,15 @@ public class PopulatingDestinationView : MonoBehaviour
             }
         }
     }
+
+// 📌 **Stores Location_ID Inside Button**
+public class LocationButton : MonoBehaviour
+{
+    public string LocationID { get; private set; }
+
+    public void Initialize(string locationId)
+    {
+        LocationID = locationId; // ✅ Stores Location_ID for later retrieval
+    }
+}
 }

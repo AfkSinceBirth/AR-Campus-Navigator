@@ -1,11 +1,21 @@
+using JetBrains.Annotations;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
+using UnityEngine.XR.ARFoundation;
 
 public class SetNavigationTarget : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject navTargetObject;
+    [RuntimeInitializeOnLoadMethod]
+    static void Init()
+    {
+        SceneManager.sceneUnloaded += (scene) => {
+            LoaderUtility.Deinitialize();
+            LoaderUtility.Initialize();
+        };
+    }
 
     [SerializeField]
     private float groundSearchDistance = 2.0f;
@@ -18,20 +28,24 @@ public class SetNavigationTarget : MonoBehaviour
 
     private bool pathVisible = false; // Toggle for showing/hiding path
 
+    private GameObject navStartObject;
+    private GameObject navTargetObject;
+
     private void Start()
     {
         path = new NavMeshPath();
         line = GetComponent<LineRenderer>();
 
-        if (!NavMesh.SamplePosition(transform.position, out NavMeshHit playerHit, 2.0f, NavMesh.AllAreas))
-        {
-            Debug.LogWarning("Player is NOT on the NavMesh!");
-        }
+        GameObject info = GameObject.Find("DestinationInfo");
+        TMP_Text tmpText = info.GetComponent<TMP_Text>();
+        tmpText.text = $"To {NavigationEndpoints.DestinationLocationName}";
 
-        if (!NavMesh.SamplePosition(navTargetObject.transform.position, out NavMeshHit targetHit, 2.0f, NavMesh.AllAreas))
-        {
-            Debug.LogWarning("Target object is NOT on the NavMesh!");
-        }
+        Debug.Log($"start : {NavigationEndpoints.StartingLocationId}  end : {NavigationEndpoints.DestinationLocationId}");
+        navStartObject = GameObject.Find(NavigationEndpoints.StartingLocationId);
+        navTargetObject = GameObject.Find(NavigationEndpoints.DestinationLocationId);
+        UpdatePosition(gameObject, navStartObject);
+
+        GetPathDistance();
 
         // Set up the LineRenderer
         line.enabled = false;
@@ -52,6 +66,7 @@ public class SetNavigationTarget : MonoBehaviour
 
         if (pathVisible)
         {
+            GetPathDistance();
             RenderPath();
         }
         else
@@ -59,14 +74,38 @@ public class SetNavigationTarget : MonoBehaviour
             line.enabled = false; // Hide path when toggle is off
         }
     }
-
-    public void TogglePathVisibility()
+    void UpdatePosition(GameObject current, GameObject target)
     {
-        pathVisible = !pathVisible;
+        Vector3 newPosition = new Vector3(target.transform.position.x, current.transform.position.y, target.transform.position.z);
+        current.transform.position = newPosition;
     }
 
-    private void RenderPath()
-    {
+    public void GetPathDistance()
+    {   
+        Vector3 startPos = AdjustToNavMesh(transform.position);
+        Vector3 targetPos = AdjustToNavMesh(navTargetObject.transform.position);
+
+        if (NavMesh.CalculatePath(startPos, targetPos, NavMesh.AllAreas, path))
+        {
+            float totalDistance = 0f;
+            for (int i = 1; i < path.corners.Length; i++) // Loop through path points
+            {
+                totalDistance += Vector3.Distance(path.corners[i - 1], path.corners[i]);
+            }
+            GameObject textObject = GameObject.Find("DistanceLeftValue");
+            TMP_Text tmpText = textObject.GetComponent<TMP_Text>();
+            tmpText.text = $"{totalDistance:F1}m";
+        }
+        else
+        {
+            Debug.LogWarning("NavMesh path calculation failed: " + path.status);
+        }
+
+    }
+
+    public void RenderPath()
+    {   
+        pathVisible = true;
         // Calculate ground-projected start (player) and target positions
         Vector3 startPos = AdjustToNavMesh(transform.position);
         Vector3 targetPos = AdjustToNavMesh(navTargetObject.transform.position);
