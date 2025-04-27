@@ -1,0 +1,291 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.WireUs.HomeNavigator"
+4    android:installLocation="preferExternal"
+5    android:versionCode="1"
+6    android:versionName="0.1.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="24"
+10        android:targetSdkVersion="35" />
+11
+12    <supports-screens
+12-->C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:4:3-163
+13        android:anyDensity="true"
+13-->C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:4:135-160
+14        android:largeScreens="true"
+14-->C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:4:78-105
+15        android:normalScreens="true"
+15-->C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:4:49-77
+16        android:smallScreens="true"
+16-->C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:4:21-48
+17        android:xlargeScreens="true" />
+17-->C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:4:106-134
+18
+19    <uses-permission android:name="android.permission.INTERNET" />
+19-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:5-67
+19-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:22-64
+20    <uses-permission android:name="android.permission.CAMERA" />
+20-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:5-65
+20-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:22-62
+21
+22    <uses-feature android:glEsVersion="0x00030000" />
+22-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:5-54
+22-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:19-51
+23    <uses-feature
+23-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:12:5-14:36
+24        android:name="android.hardware.camera"
+24-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:13:9-47
+25        android:required="false" />
+25-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:9-33
+26    <uses-feature
+26-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:15:5-17:36
+27        android:name="android.hardware.camera.autofocus"
+27-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:16:9-57
+28        android:required="false" />
+28-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:17:9-33
+29    <uses-feature
+29-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:18:5-20:36
+30        android:name="android.hardware.camera.front"
+30-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:19:9-53
+31        android:required="false" />
+31-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:20:9-33
+32    <uses-feature
+32-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:21:5-23:36
+33        android:name="android.hardware.touchscreen"
+33-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:22:9-52
+34        android:required="false" />
+34-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:23:9-33
+35    <uses-feature
+35-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:24:5-26:36
+36        android:name="android.hardware.touchscreen.multitouch"
+36-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:25:9-63
+37        android:required="false" />
+37-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:26:9-33
+38    <uses-feature
+38-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:27:5-29:36
+39        android:name="android.hardware.touchscreen.multitouch.distinct"
+39-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:28:9-72
+40        android:required="false" />
+40-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:29:9-33
+41    <uses-feature
+41-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:30:5-32:35
+42        android:name="android.hardware.camera.ar"
+42-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:31:9-50
+43        android:required="true" />
+43-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:32:9-32
+44    <uses-feature
+44-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:33:5-35:35
+45        android:name="com.google.ar.core.depth"
+45-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:34:9-48
+46        android:required="true" />
+46-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:35:9-32
+47
+48    <queries>
+48-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:20:5-27:15
+49        <package android:name="com.google.ar.core" />
+49-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:21:9-54
+49-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:21:18-51
+50        <package android:name="com.android.vending" />
+50-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:22:9-55
+50-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:22:18-52
+51
+52        <intent>
+52-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:24:9-26:18
+53            <action android:name="com.google.android.play.core.install.BIND_INSTALL_SERVICE" />
+53-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:25:13-96
+53-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:25:21-93
+54        </intent>
+55    </queries>
+56
+57    <permission
+57-->[androidx.core:core:1.9.0] C:\Users\ompan\.gradle\caches\transforms-3\c919e84cf21a5073ea88f45ff1a29b85\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+58        android:name="com.WireUs.HomeNavigator.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+58-->[androidx.core:core:1.9.0] C:\Users\ompan\.gradle\caches\transforms-3\c919e84cf21a5073ea88f45ff1a29b85\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+59        android:protectionLevel="signature" />
+59-->[androidx.core:core:1.9.0] C:\Users\ompan\.gradle\caches\transforms-3\c919e84cf21a5073ea88f45ff1a29b85\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+60
+61    <uses-permission android:name="com.WireUs.HomeNavigator.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+61-->[androidx.core:core:1.9.0] C:\Users\ompan\.gradle\caches\transforms-3\c919e84cf21a5073ea88f45ff1a29b85\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+61-->[androidx.core:core:1.9.0] C:\Users\ompan\.gradle\caches\transforms-3\c919e84cf21a5073ea88f45ff1a29b85\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+62
+63    <application
+63-->C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:3-83
+64        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+64-->[androidx.core:core:1.9.0] C:\Users\ompan\.gradle\caches\transforms-3\c919e84cf21a5073ea88f45ff1a29b85\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+65        android:enableOnBackInvokedCallback="false"
+65-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:38:9-52
+66        android:extractNativeLibs="true"
+67        android:icon="@mipmap/app_icon"
+67-->C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:16-47
+68        android:label="@string/app_name" >
+68-->C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:48-80
+69        <meta-data
+69-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:40:9-42:33
+70            android:name="unity.splash-mode"
+70-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:41:13-45
+71            android:value="0" />
+71-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:42:13-30
+72        <meta-data
+72-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:43:9-45:36
+73            android:name="unity.splash-enable"
+73-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:44:13-47
+74            android:value="True" />
+74-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:45:13-33
+75        <meta-data
+75-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:46:9-48:36
+76            android:name="unity.launch-fullscreen"
+76-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:47:13-51
+77            android:value="True" />
+77-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:48:13-33
+78        <meta-data
+78-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:49:9-51:36
+79            android:name="unity.render-outside-safearea"
+79-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:50:13-57
+80            android:value="True" />
+80-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:51:13-33
+81        <meta-data
+81-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:52:9-54:50
+82            android:name="notch.config"
+82-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:53:13-40
+83            android:value="portrait|landscape" />
+83-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:54:13-47
+84        <meta-data
+84-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:55:9-57:36
+85            android:name="unity.auto-report-fully-drawn"
+85-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:56:13-57
+86            android:value="true" />
+86-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:57:13-33
+87        <meta-data
+87-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:58:9-60:36
+88            android:name="unity.auto-set-game-state"
+88-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:59:13-53
+89            android:value="true" />
+89-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:60:13-33
+90        <meta-data
+90-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:61:9-63:36
+91            android:name="unity.strip-engine-code"
+91-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:62:13-51
+92            android:value="true" />
+92-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:63:13-33
+93
+94        <activity
+94-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:65:9-96:20
+95            android:name="com.unity3d.player.UnityPlayerGameActivity"
+95-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:66:13-70
+96            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+96-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:67:13-194
+97            android:enabled="true"
+97-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:68:13-35
+98            android:exported="true"
+98-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:69:13-36
+99            android:hardwareAccelerated="false"
+99-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:70:13-48
+100            android:launchMode="singleTask"
+100-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:71:13-44
+101            android:resizeableActivity="true"
+101-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:72:13-46
+102            android:screenOrientation="fullUser"
+102-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:73:13-49
+103            android:theme="@style/BaseUnityGameActivityTheme" >
+103-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:74:13-62
+104            <intent-filter>
+104-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:75:13-79:29
+105                <category android:name="android.intent.category.LAUNCHER" />
+105-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:76:17-77
+105-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:76:27-74
+106
+107                <action android:name="android.intent.action.MAIN" />
+107-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:78:17-69
+107-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:78:25-66
+108            </intent-filter>
+109
+110            <meta-data
+110-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:81:13-83:40
+111                android:name="unityplayer.UnityActivity"
+111-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:82:17-57
+112                android:value="true" />
+112-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:83:17-37
+113            <meta-data
+113-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:84:13-86:40
+114                android:name="android.app.lib_name"
+114-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:85:17-52
+115                android:value="game" />
+115-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:86:17-37
+116            <meta-data
+116-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:87:13-89:71
+117                android:name="WindowManagerPreference:FreeformWindowSize"
+117-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:88:17-74
+118                android:value="@string/FreeformWindowSize_maximize" />
+118-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:89:17-68
+119            <meta-data
+119-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:90:13-92:79
+120                android:name="WindowManagerPreference:FreeformWindowOrientation"
+120-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:91:17-81
+121                android:value="@string/FreeformWindowOrientation_landscape" />
+121-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:92:17-76
+122            <meta-data
+122-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:93:13-95:40
+123                android:name="notch_support"
+123-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:94:17-45
+124                android:value="true" />
+124-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:95:17-37
+125        </activity>
+126
+127        <meta-data
+127-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:98:9-100:36
+128            android:name="unityplayer.SkipPermissionsDialog"
+128-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:99:13-61
+129            android:value="true" />
+129-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:100:13-33
+130        <meta-data
+130-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:101:9-103:40
+131            android:name="com.google.ar.core"
+131-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:102:13-46
+132            android:value="required" /> <!-- The minimal version code of ARCore APK required for an app using this SDK. -->
+132-->[:unityLibrary] C:\Users\ompan\HomeNavigator\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:103:13-37
+133        <meta-data
+133-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:32:9-34:41
+134            android:name="com.google.ar.core.min_apk_version"
+134-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:33:13-62
+135            android:value="240220000" /> <!-- This activity is critical for installing ARCore when it is not already present. -->
+135-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:34:13-38
+136        <activity
+136-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:36:9-42:80
+137            android:name="com.google.ar.core.InstallActivity"
+137-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:37:13-62
+138            android:configChanges="keyboardHidden|orientation|screenSize"
+138-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:38:13-74
+139            android:excludeFromRecents="true"
+139-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:39:13-46
+140            android:exported="false"
+140-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:40:13-37
+141            android:launchMode="singleTop"
+141-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:41:13-43
+142            android:theme="@android:style/Theme.Material.Light.Dialog.Alert" />
+142-->[:arcore_client:] C:\Users\ompan\.gradle\caches\transforms-3\8613db0cad9624e75f3743c7cfc05935\transformed\jetified-arcore_client\AndroidManifest.xml:42:13-77
+143
+144        <provider
+144-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ompan\.gradle\caches\transforms-3\e60bf0ab8a1217670124be7e52d524ab\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+145            android:name="androidx.startup.InitializationProvider"
+145-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ompan\.gradle\caches\transforms-3\e60bf0ab8a1217670124be7e52d524ab\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+146            android:authorities="com.WireUs.HomeNavigator.androidx-startup"
+146-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ompan\.gradle\caches\transforms-3\e60bf0ab8a1217670124be7e52d524ab\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+147            android:exported="false" >
+147-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ompan\.gradle\caches\transforms-3\e60bf0ab8a1217670124be7e52d524ab\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+148            <meta-data
+148-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ompan\.gradle\caches\transforms-3\e60bf0ab8a1217670124be7e52d524ab\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+149                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+149-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ompan\.gradle\caches\transforms-3\e60bf0ab8a1217670124be7e52d524ab\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+150                android:value="androidx.startup" />
+150-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ompan\.gradle\caches\transforms-3\e60bf0ab8a1217670124be7e52d524ab\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+151            <meta-data
+151-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\ompan\.gradle\caches\transforms-3\ca632e50827689b4d45330738d8735e2\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+152                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+152-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\ompan\.gradle\caches\transforms-3\ca632e50827689b4d45330738d8735e2\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+153                android:value="androidx.startup" />
+153-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\ompan\.gradle\caches\transforms-3\ca632e50827689b4d45330738d8735e2\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+154        </provider>
+155    </application>
+156
+157</manifest>
