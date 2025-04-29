@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.WireUs.HomeNavigator.launcher-mergeReleaseResources-20:/values-in/values-in.xml",
+            "outputFile": "com.WireUs.ARCampusNavigator.launcher-mergeReleaseResources-20:/values-in/values-in.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ompan\\.gradle\\caches\\transforms-3\\84aca059a4004f02173e8cda25f28e03\\transformed\\appcompat-1.6.1\\res\\values-in\\values-in.xml",

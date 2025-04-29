@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.WireUs.HomeNavigator.launcher-mergeReleaseResources-20:/values-es-rUY/values-es-rUY.xml",
+            "outputFile": "com.WireUs.ARCampusNavigator.launcher-mergeReleaseResources-20:/values-es-rUY/values-es-rUY.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ompan\\.gradle\\caches\\transforms-3\\8613db0cad9624e75f3743c7cfc05935\\transformed\\jetified-arcore_client\\res\\values-es-rUY\\values.xml",
