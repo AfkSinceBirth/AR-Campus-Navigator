@@ -1,8 +1,7 @@
-using JetBrains.Annotations;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.ARFoundation;
 
@@ -16,6 +15,9 @@ public class SetNavigationTarget : MonoBehaviour
             LoaderUtility.Initialize();
         };
     }
+
+    public Animator transition;
+    public float transitionTime = 1f;
 
     [SerializeField]
     private float groundSearchDistance = 2.0f;
@@ -92,6 +94,9 @@ public class SetNavigationTarget : MonoBehaviour
             {
                 totalDistance += Vector3.Distance(path.corners[i - 1], path.corners[i]);
             }
+            if(totalDistance < 0.5 ) {
+                StartCoroutine(LoadNextScene(SceneManager.GetActiveScene().buildIndex + 1));
+            }
             GameObject textObject = GameObject.Find("DistanceLeftValue");
             TMP_Text tmpText = textObject.GetComponent<TMP_Text>();
             tmpText.text = $"{totalDistance:F1}m";
@@ -101,6 +106,16 @@ public class SetNavigationTarget : MonoBehaviour
             Debug.LogWarning("NavMesh path calculation failed: " + path.status);
         }
 
+    }
+
+    IEnumerator LoadNextScene(int sceneIndex)
+    {
+
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(sceneIndex);
     }
 
     public void RenderPath()
@@ -142,5 +157,9 @@ public class SetNavigationTarget : MonoBehaviour
             line.enabled = false;
             Debug.LogWarning("NavMesh path calculation failed: " + path.status);
         }
+    }
+
+    public void goBack(){
+        StartCoroutine(LoadNextScene(SceneManager.GetActiveScene().buildIndex - 1));
     }
 }

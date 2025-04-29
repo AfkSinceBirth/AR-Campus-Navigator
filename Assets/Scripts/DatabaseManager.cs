@@ -12,6 +12,13 @@ public class DatabaseManager
     {
         dbPath = Path.Combine(Application.persistentDataPath, "locations.db");
 
+        // 🔍 **Copy database from StreamingAssets if it doesn't exist**
+        if (!File.Exists(dbPath))
+        {
+            Debug.LogWarning($"⚠️ Database not found in persistent storage. Copying from StreamingAssets...");
+            CopyDatabaseFromStreamingAssets();
+        }
+
         // 🔍 Ensure database exists before connecting
         if (!File.Exists(dbPath))
         {
@@ -21,6 +28,33 @@ public class DatabaseManager
 
         _connection = new SQLiteConnection(dbPath);
         Debug.Log($"✅ Connected to database at: {dbPath}");
+    }
+
+    // 📌 **Copy database from StreamingAssets to PersistentDataPath**
+    private void CopyDatabaseFromStreamingAssets()
+    {
+        string sourcePath = Path.Combine(Application.streamingAssetsPath, "locations.db");
+
+        try
+        {
+#if UNITY_ANDROID
+            // 🔥 **Use UnityWebRequest for Android file access**
+            using (UnityEngine.Networking.UnityWebRequest www = UnityEngine.Networking.UnityWebRequest.Get(sourcePath))
+            {
+                www.SendWebRequest();
+                while (!www.isDone) { } // Wait for download to complete
+                File.WriteAllBytes(dbPath, www.downloadHandler.data);
+            }
+#else
+        // ✅ **For PC & iOS, directly overwrite the file**
+        File.Copy(sourcePath, dbPath, true); // `true` forces overwrite
+#endif
+            Debug.Log($"✅ Database replaced successfully at: {dbPath}");
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"❌ Failed to copy database: {ex.Message}");
+        }
     }
 
     // 📌 **Fetch Only Location Names (Compatible with PopulatingDestinationView)**

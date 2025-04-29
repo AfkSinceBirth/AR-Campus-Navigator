@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.WireUs.HomeNavigator"
+    package="com.WireUs.ARCampusNavigator"
     android:installLocation="preferExternal"
     android:versionCode="1"
     android:versionName="0.1.0" >
@@ -55,10 +55,10 @@
     </queries>
 
     <permission
-        android:name="com.WireUs.HomeNavigator.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.WireUs.ARCampusNavigator.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.WireUs.HomeNavigator.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.WireUs.ARCampusNavigator.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -143,7 +143,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.WireUs.HomeNavigator.androidx-startup"
+            android:authorities="com.WireUs.ARCampusNavigator.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

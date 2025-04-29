@@ -4,15 +4,19 @@ using TMPro;
 using UnityEngine.Android;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PopulatingDestinationView : MonoBehaviour
 {
+
+    public Animator transition;
+    public float transitionTime = 1f;
     public GameObject locationPrefab; // Button prefab for locations
     public Transform contentHolder; // Parent object for scroll view items
     public TMP_InputField searchField; // Search bar input field
 
     private DatabaseManager databaseManager; // Handles database interactions
-    private List<(string,string)> locations; // Stores retrieved locations
+    private List<(string, string)> locations; // Stores retrieved locations
 
     void Start()
     {
@@ -26,7 +30,7 @@ public class PopulatingDestinationView : MonoBehaviour
     {
         locations = databaseManager.GetLocations(); // 📌 Fetch both Location_ID & Location_Name
 
-        foreach ((string,string) location in locations)
+        foreach ((string, string) location in locations)
         {
             GameObject newItem = Instantiate(locationPrefab, contentHolder);
             Button button = newItem.GetComponent<Button>();
@@ -62,7 +66,17 @@ public class PopulatingDestinationView : MonoBehaviour
         NavigationEndpoints.DestinationLocationId = destinationId;
         NavigationEndpoints.DestinationLocationName = destinationName;
         Debug.Log($"✅ Destination Selected: {NavigationEndpoints.DestinationLocationId}");
-        SceneManager.LoadScene("NavigationScreen");
+        StartCoroutine(LoadNextScene(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    IEnumerator LoadNextScene(int sceneIndex)
+    {
+
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(sceneIndex);
     }
 
     void FilterList(string query)
@@ -78,14 +92,18 @@ public class PopulatingDestinationView : MonoBehaviour
         }
     }
 
-// 📌 **Stores Location_ID Inside Button**
-public class LocationButton : MonoBehaviour
-{
-    public string LocationID { get; private set; }
-
-    public void Initialize(string locationId)
+    // 📌 **Stores Location_ID Inside Button**
+    public class LocationButton : MonoBehaviour
     {
-        LocationID = locationId; // ✅ Stores Location_ID for later retrieval
+        public string LocationID { get; private set; }
+
+        public void Initialize(string locationId)
+        {
+            LocationID = locationId; // ✅ Stores Location_ID for later retrieval
+        }
     }
-}
+    public void goBack()
+    {
+        StartCoroutine(LoadNextScene(SceneManager.GetActiveScene().buildIndex - 1));
+    }
 }
