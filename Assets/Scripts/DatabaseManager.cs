@@ -26,7 +26,7 @@ public class DatabaseManager
         }
 
         _connection = new SQLiteConnection(dbPath);
-        Debug.Log($"✅ Connected to database at: {dbPath}");
+        Debug.Log($"Connected to database at: {dbPath}");
     }
 
    
