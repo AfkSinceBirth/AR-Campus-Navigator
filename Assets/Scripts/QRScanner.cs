@@ -10,11 +10,11 @@ public class QRScanner : MonoBehaviour
     public float transitionTime = 1f;
     private WebCamTexture camTexture;
     private BarcodeReader barcodeReader;
-    private RawImage rawImage; // Automatically finds the attached RawImage
+    private RawImage rawImage;
 
     void Awake()
     {
-        if (camTexture == null) // 📌 Ensures camera is only initialized once
+        if (camTexture == null) 
         {
             camTexture = new WebCamTexture();
         }
@@ -22,33 +22,33 @@ public class QRScanner : MonoBehaviour
 
     void Start()
     {
-        rawImage = GetComponent<RawImage>(); // 📌 Finds the attached RawImage
+        rawImage = GetComponent<RawImage>(); // Finds the attached RawImage
         StartCoroutine(DelayedStartCamera());
     }
 
-    void OnEnable() // 📌 Restart camera when scene is loaded again
+    void OnEnable() // Restart camera when scene is loaded again
     {
         StartCoroutine(DelayedStartCamera());
     }
 
     IEnumerator DelayedStartCamera()
     {
-        yield return new WaitForSeconds(0f); // 🔥 1-second delay before starting camera
+        yield return new WaitForSeconds(0f); 
         StartCamera();
         rawImage.rectTransform.localEulerAngles = new Vector3(0, 0, -90);
     }
 
     void StartCamera()
     {
-        rawImage.texture = camTexture; // 📌 Assigns camera feed to UI
-        rawImage.material.mainTexture = camTexture; // Ensures correct rendering
+        rawImage.texture = camTexture; 
+        rawImage.material.mainTexture = camTexture; 
         camTexture.Play();
         barcodeReader = new BarcodeReader();
     }
 
     void Update()
     {
-        if (camTexture != null && camTexture.isPlaying) // ✅ Only scan when camera is active
+        if (camTexture != null && camTexture.isPlaying) //Only scan when camera is active
         {
             TryScanQRCode();
         }
@@ -87,15 +87,15 @@ public class QRScanner : MonoBehaviour
     {
         foreach (char c in input)
         {
-            if (!char.IsLetterOrDigit(c)) // ✅ Checks only letters/numbers
+            if (!char.IsLetterOrDigit(c)) //Checks only letters/numbers
             {
-                return false; // ❌ Invalid character found!
+                return false; 
             }
         }
-        return true; // ✅ String is valid!
+        return true; 
     }
 
-    void OnDisable() // 📌 Properly stops camera before leaving the scene
+    void OnDisable() 
     {
         if (camTexture != null)
         {

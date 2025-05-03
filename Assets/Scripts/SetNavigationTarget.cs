@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 
 public class SetNavigationTarget : MonoBehaviour
@@ -10,7 +11,8 @@ public class SetNavigationTarget : MonoBehaviour
     [RuntimeInitializeOnLoadMethod]
     static void Init()
     {
-        SceneManager.sceneUnloaded += (scene) => {
+        SceneManager.sceneUnloaded += (scene) =>
+        {
             LoaderUtility.Deinitialize();
             LoaderUtility.Initialize();
         };
@@ -23,12 +25,14 @@ public class SetNavigationTarget : MonoBehaviour
     private float groundSearchDistance = 2.0f;
 
     [SerializeField]
-    private float offsetHeight = 1.0f;
+    private float currentHeightOffset = 1f; 
 
-    private NavMeshPath path; // Current calculated path
-    private LineRenderer line; // LineRenderer to display path
+    private NavMeshPath path; 
+    private LineRenderer line; 
 
-    private bool pathVisible = false; // Toggle for showing/hiding path
+    public Slider heightSlider;
+
+    private bool pathVisible = false; 
 
     private GameObject navStartObject;
     private GameObject navTargetObject;
@@ -46,10 +50,8 @@ public class SetNavigationTarget : MonoBehaviour
         navStartObject = GameObject.Find(NavigationEndpoints.StartingLocationId);
         navTargetObject = GameObject.Find(NavigationEndpoints.DestinationLocationId);
         UpdatePosition(gameObject, navStartObject);
-
+        
         GetPathDistance();
-
-        // Set up the LineRenderer
         line.enabled = false;
     }
 
@@ -64,8 +66,7 @@ public class SetNavigationTarget : MonoBehaviour
     }
 
     private void Update()
-    {
-
+    {   
         if (pathVisible)
         {
             GetPathDistance();
@@ -73,9 +74,10 @@ public class SetNavigationTarget : MonoBehaviour
         }
         else
         {
-            line.enabled = false; // Hide path when toggle is off
+            line.enabled = false;
         }
     }
+
     void UpdatePosition(GameObject current, GameObject target)
     {
         Vector3 newPosition = new Vector3(target.transform.position.x, current.transform.position.y, target.transform.position.z);
@@ -83,18 +85,19 @@ public class SetNavigationTarget : MonoBehaviour
     }
 
     public void GetPathDistance()
-    {   
+    {
         Vector3 startPos = AdjustToNavMesh(transform.position);
         Vector3 targetPos = AdjustToNavMesh(navTargetObject.transform.position);
 
         if (NavMesh.CalculatePath(startPos, targetPos, NavMesh.AllAreas, path))
         {
             float totalDistance = 0f;
-            for (int i = 1; i < path.corners.Length; i++) // Loop through path points
+            for (int i = 1; i < path.corners.Length; i++) 
             {
                 totalDistance += Vector3.Distance(path.corners[i - 1], path.corners[i]);
             }
-            if(totalDistance < 0.5 ) {
+            if (totalDistance < 0.5)
+            {
                 StartCoroutine(LoadNextScene(SceneManager.GetActiveScene().buildIndex + 1));
             }
             GameObject textObject = GameObject.Find("DistanceLeftValue");
@@ -119,13 +122,11 @@ public class SetNavigationTarget : MonoBehaviour
     }
 
     public void RenderPath()
-    {   
+    {
         pathVisible = true;
-        // Calculate ground-projected start (player) and target positions
         Vector3 startPos = AdjustToNavMesh(transform.position);
         Vector3 targetPos = AdjustToNavMesh(navTargetObject.transform.position);
 
-        // Generate the path
         NavMesh.CalculatePath(startPos, targetPos, NavMesh.AllAreas, path);
 
         if (path.status == NavMeshPathStatus.PathComplete && path.corners.Length > 0)
@@ -144,7 +145,7 @@ public class SetNavigationTarget : MonoBehaviour
                 }
                 else
                 {
-                    floatingCorners[i] = new Vector3(corner.x, corner.y + offsetHeight, corner.z);
+                    floatingCorners[i] = new Vector3(corner.x, corner.y + currentHeightOffset, corner.z);
                 }
             }
 
@@ -159,7 +160,8 @@ public class SetNavigationTarget : MonoBehaviour
         }
     }
 
-    public void goBack(){
+    public void goBack()
+    {
         StartCoroutine(LoadNextScene(SceneManager.GetActiveScene().buildIndex - 1));
     }
 }
